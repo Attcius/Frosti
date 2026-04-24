@@ -1,0 +1,26 @@
+---
+// src/components/TechSection.astro
+import { Icon } from "astro-icon/components";
+import TechItem from './TechItem.astro';
+import type { TechItem as TechItemType } from "@/data/techStack";
+
+interface Props {
+  title: string;
+  iconName: string;
+  items: TechItemType[];
+}
+
+const { title, iconName, items } = Astro.props;
+---
+
+<div>
+  <h3 class="text-xl font-semibold mb-4 flex items-center gap-2 text-base-content/90">
+    <Icon name={iconName} class="w-5 h-5 text-primary" />
+    <span>{title}</span>
+  </h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1 divide-y divide-base-200">
+    {items.map((tech) => (
+      <TechItem {...tech} />
+    ))}
+  </div>
+</div>

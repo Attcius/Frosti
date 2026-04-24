@@ -1,0 +1,46 @@
+---
+// src/components/TechItem.astro
+import { Icon } from "astro-icon/components";
+import type { TechItem } from "@/data/techStack";
+
+interface Props extends TechItem {}
+
+const { name, icon, color, level, useText, iconText } = Astro.props;
+
+const levelMap: Record<number, string> = {
+  1: "入门",
+  2: "了解",
+  3: "熟悉",
+  4: "熟练",
+  5: "资深"
+};
+---
+
+<div class="flex items-center gap-4 py-2">
+  <!-- 图标区域 -->
+  <div class="w-8 h-8 flex-shrink-0 flex items-center justify-center text-xl" style={`color: ${color}`}>
+    {useText ? (
+      <span class="text-xs font-bold border border-current rounded p-0.5">{iconText}</span>
+    ) : (
+      <Icon name={icon} class="w-6 h-6" />
+    )}
+  </div>
+  
+  <!-- 技术名称 -->
+  <div class="w-36 flex-shrink-0 text-sm font-medium truncate" title={name}>
+    {name}
+  </div>
+
+  <!-- 进度条 -->
+  <div class="flex-1 bg-base-300 rounded-full h-2.5 overflow-hidden">
+    <div 
+      class="bg-primary h-2.5 rounded-full transition-all duration-500" 
+      style={`width: ${(level / 5) * 100}%`}
+    ></div>
+  </div>
+
+  <!-- 等级文字 -->
+  <div class="w-10 flex-shrink-0 text-right text-xs text-base-content/70">
+    {levelMap[level]}
+  </div>
+</div>

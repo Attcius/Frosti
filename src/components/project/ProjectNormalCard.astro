@@ -1,0 +1,38 @@
+---
+import { Icon } from "astro-icon/components";
+import type { Project } from "@/data/projects";
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<div class="card bg-base-200 border border-base-300 p-6 flex flex-col hover:shadow-md transition-shadow">
+  <div class="flex items-center gap-3 mb-3">
+    {project.icon && <Icon name={project.icon} class="w-6 h-6 text-primary" />}
+    <h3 class="text-lg font-bold">{project.title}</h3>
+  </div>
+  
+  <p class="text-base-content/70 text-sm mb-4 flex-grow leading-relaxed">{project.description}</p>
+  
+  <div class="flex flex-wrap gap-2 mb-4">
+    {project.tags.map((tag) => (
+      <span class="badge badge-ghost badge-sm">{tag}</span>
+    ))}
+  </div>
+
+  <div class="flex gap-3 mt-auto pt-2 border-t border-base-300">
+    <a href={project.github} target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-ghost gap-1 text-base-content/60 hover:text-primary">
+      <Icon name="lucide:github" class="w-3.5 h-3.5" />
+      GitHub
+    </a>
+    {project.demo && (
+      <a href={project.demo} target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-ghost gap-1 text-base-content/60 hover:text-primary">
+        <Icon name="lucide:external-link" class="w-3.5 h-3.5" />
+        Demo
+      </a>
+    )}
+  </div>
+</div>
