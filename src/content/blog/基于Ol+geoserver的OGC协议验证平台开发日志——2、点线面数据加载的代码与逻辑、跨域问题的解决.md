@@ -16,7 +16,7 @@ tags:
 
 首先，为了这个实例平台，我准备了点线面三种数据，分别命名为point/string/polygon，其都是shp格式的数据
 
-我们通过以前的方法，将这些数据录入到postgresql，具体的方法可以见[https://mp.csdn.net/mp_blog/creation/editor/155060418](https://mp.csdn.net/mp_blog/creation/editor/155060418)
+我们通过以前的方法，将这些数据录入到postgresql，具体的方法可以见
 
 其中包括了shp数据从放入postgresql再到geoserver的全过程。
 
