@@ -31,7 +31,7 @@ import TileLayer from "ol/layer/Tile";
 export function createTdtVecLayer() {
   return new TileLayer({
     source: new XYZ({
-      url: `https://t{0-7}.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=${TDT_TOKEN}`,
+      url: `https://t{0-7}.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=YOUR_TDT_TOKEN`,
       crossOrigin: "anonymous",
     }),
     visible: true,
@@ -41,7 +41,7 @@ export function createTdtVecLayer() {
 export function createTdtVecAnnoLayer() {
   return new TileLayer({
     source: new XYZ({
-      url: `https://t{0-7}.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=${TDT_TOKEN}`,
+      url: `https://t{0-7}.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=YOUR_TDT_TOKEN`,
       crossOrigin: "anonymous",
     }),
     visible: true,

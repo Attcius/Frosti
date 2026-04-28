@@ -22,7 +22,7 @@ tags:
 
 由于是wfs，因此我们要加载geojson数据
 
-在以前，我是直接拿了geoserver的一整条wfs数据，里面包裹着参数
+早期开发时，我直接使用了 GeoServer 的完整 WFS 请求地址，包含各种查询参数
 
 ```javascript
 http://localhost:8080/geoserver/tiger/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=tiger%3Agiant_polygon&outputFormat=application%2Fjson&maxFeatures=50
