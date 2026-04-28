@@ -22,8 +22,6 @@ tags:
 
 由于是wfs，因此我们要加载geojson数据
 
-![](https://ima-notebook-prod.image.myqcloud.com/2/Yr0MEeYDgzyPnPV1ON6P2D/34a624494a9b4847a4bad9d1b76609ca.webp?q-sign-algorithm=sha1&q-ak=AKID9IDtLZZKqGRO7hVFnMn0zjXTXovoTtAN&q-sign-time=1777360308;1777389108&q-key-time=1777360308;1777389108&q-header-list=&q-url-param-list=&q-signature=52bb374eb38b1fb0db0e2d511405789be7f81f26)
-
 在以前，我是直接拿了geoserver的一整条wfs数据，里面包裹着参数
 
 ```javascript
