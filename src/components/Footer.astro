@@ -1,5 +1,5 @@
 ---
-import { USER_NAME, USER_SITE } from "@config";
+import { USER_FOOTER_SOCIAL_ICONS, USER_NAME, USER_SITE } from "@config";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -19,7 +19,7 @@ import { Icon } from "astro-icon/components";
       ></path>
     </svg>
     <p>
-      Powered by <a href="https://github.com/EveSunMaple/Frosti" target="_blank" class="font-bold">EveSunSample</a> 的开源模板
+      Powered by <a href="https://github.com/EveSunMaple/Frosti" target="_blank" class="font-bold">EveSunMaple</a> 的开源模板
       <br />
       Copyright © <a href={USER_SITE} target="_blank" class="font-bold">{USER_NAME}</a>
       {new Date().getFullYear()} - All right reserved
@@ -28,16 +28,13 @@ import { Icon } from "astro-icon/components";
   <nav>
     <span class="footer-title">Social</span>
     <div class="grid grid-flow-col gap-4">
-      <div class="tooltip" data-tip="GitHub">
-        <a tabindex="0" href="https://github.com/ZoeyLee0723" target="_blank" aria-label="GitHub">
-          <Icon name="mdi:github" class="text-2xl md:text-xl" />
-        </a>
-      </div>
-      <div class="tooltip" data-tip="Bilibili">
-        <a tabindex="0" href="https://space.bilibili.com/125111176?spm_id_from=333.1007.0.0" target="_blank" aria-label="Bilibili">
-          <Icon name="ri:bilibili-fill" class="text-2xl md:text-xl" />
-        </a>
-      </div>
+      {USER_FOOTER_SOCIAL_ICONS.map((social) => (
+        <div class="tooltip" data-tip={social.title}>
+          <a tabindex="0" href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.ariaLabel}>
+            <Icon name={social.svg} class="text-2xl md:text-xl" />
+          </a>
+        </div>
+      ))}
     </div>
   </nav>
 </footer>

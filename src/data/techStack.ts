@@ -1,4 +1,3 @@
-// src/data/techStack.ts
 export interface TechItem {
   name: string;
   icon: string;
@@ -8,185 +7,86 @@ export interface TechItem {
   iconText?: string;
 }
 
-export const frontendTech: TechItem[] = [
-  {
-    name: "HTML / CSS",
-    icon: "simple-icons:html5",
-    color: "oklch(0.7 0.2 30)",
-    level: 2,
-  },
-  {
-    name: "SCSS",
-    icon: "simple-icons:sass",
-    color: "oklch(0.7 0.2 330)",
-    level: 2,
-  },
-  {
-    name: "JavaScript",
-    icon: "simple-icons:javascript",
-    color: "oklch(0.8 0.2 80)",
-    level: 3,
-  },
-  {
-    name: "TypeScript",
-    icon: "simple-icons:typescript",
-    color: "oklch(0.6 0.2 250)",
-    level: 1,
-  },
-  {
-    name: "Vue.js",
-    icon: "simple-icons:vuedotjs",
-    color: "oklch(0.65 0.2 150)",
-    level: 3,
-  },
-  {
-    name: "前端工程化",
-    icon: "simple-icons:vite",
-    color: "oklch(0.7 0.2 250)",
-    level: 2,
-  },
-];
+function tech(
+  name: string,
+  icon: string,
+  level: number,
+  color = "oklch(0.65 0.2 250)",
+): TechItem {
+  return { name, icon, color, level };
+}
 
-export const gisTech: TechItem[] = [
-  {
-    name: "GIS 基础",
-    icon: "lucide:globe",
-    color: "oklch(0.6 0.2 160)",
-    level: 3,
-  },
-  {
-    name: "OGC 标准协议",
-    icon: "lucide:file-cog",
-    color: "oklch(0.6 0.2 260)",
-    level: 4,
-  },
-  {
-    name: "空间分析",
-    icon: "lucide:scan",
-    color: "oklch(0.65 0.2 180)",
-    level: 3,
-  },
-  {
-    name: "现代数据规范(3dtiles)",
-    icon: "lucide:box",
-    color: "oklch(0.7 0.15 60)",
-    level: 2,
-  },
-  {
-    name: "遥感基础",
-    icon: "lucide:satellite",
-    color: "oklch(0.5 0.2 250)",
-    level: 1,
-  },
-  {
-    name: "QGIS/ArcGIS",
-    icon: "lucide:map-pinned",
-    color: "oklch(0.6 0.2 260)",
-    level: 3,
-  },
-  {
-    name: "服务器GIS(geoserver）",
-    icon: "lucide:server",
-    color: "oklch(0.6 0.15 160)",
-    level: 3,
-  },
-  {
-    name: "空间数据库(PostgreSQL/PostGIS)",
-    icon: "simple-icons:postgresql",
-    color: "oklch(0.6 0.2 240)",
-    level: 3,
-  },
+export const frontendTech: TechItem[] = [
+  tech("HTML / CSS", "simple-icons:html5", 4, "oklch(0.7 0.2 30)"),
+  tech("JavaScript", "simple-icons:javascript", 4, "oklch(0.8 0.2 80)"),
+  tech("TypeScript", "simple-icons:typescript", 4),
+  tech("Less / Sass", "simple-icons:sass", 3, "oklch(0.7 0.2 330)"),
+  tech("原子化 CSS", "lucide:layout", 3),
+  tech("Flex / Grid 与移动端适配", "lucide:layout", 3),
+  tech("HTTP / Web API", "lucide:code-2", 3),
+  tech("WebSocket / SSE", "lucide:code-2", 3),
 ];
 
 export const frontendLibs: TechItem[] = [
-  {
-    name: "Axios",
-    icon: "simple-icons:axios",
-    color: "oklch(0.6 0.2 250)",
-    level: 3,
-  },
-  {
-    name: "Element Plus / Vant",
-    icon: "lucide:layout-grid",
-    color: "oklch(0.6 0.2 30)",
-    level: 2,
-  },
-  {
-    name: "ECharts",
-    icon: "simple-icons:apacheecharts",
-    color: "oklch(0.7 0.2 280)",
-    level: 2,
-  },
-  {
-    name: "Astro",
-    icon: "simple-icons:astro",
-    color: "oklch(0.6 0.2 280)",
-    level: 2,
-  },
+  tech("Vue2/3", "simple-icons:vuedotjs", 4, "oklch(0.65 0.2 150)"),
+  tech("React 19", "simple-icons:react", 2),
+  tech("Vue Router", "lucide:boxes", 4),
+  tech("Pinia", "lucide:boxes", 4),
+  tech("Axios", "simple-icons:axios", 4),
+  tech("Element Plus", "lucide:layout", 4),
+  tech("Vant", "lucide:layout", 2),
+  tech("Uniapp", "lucide:layout", 3),
+  tech("Astro", "simple-icons:astro", 2),
 ];
 
-export const gisLibs: TechItem[] = [
-  {
-    name: "OpenLayers",
-    icon: "simple-icons:openlayers",
-    color: "oklch(0.6 0.2 200)",
-    level: 4,
-  },
-  {
-    name: "Cesium",
-    icon: "simple-icons:cesium",
-    color: "oklch(0.7 0.15 60)",
-    level: 2,
-  },
-  {
-    name: "Turf.js",
-    icon: "lucide:pentagon",
-    color: "oklch(0.6 0.15 120)",
-    level: 2,
-  },
-  {
-    name: "ArcGIS API / 超图",
-    icon: "simple-icons:esri",
-    color: "oklch(0.5 0.2 260)",
-    level: 1,
-  },
+export const visualizationTech: TechItem[] = [
+  tech("ECharts", "simple-icons:apacheecharts", 3, "oklch(0.7 0.2 280)"),
+  tech("AntV", "lucide:scan", 3),
+  tech("可视化大屏与图表联动", "lucide:layout", 3),
+  tech("three.js", "lucide:box", 3),
+  tech("WebGL", "lucide:box", 2),
+];
+
+export const gisTech: TechItem[] = [
+  tech("GIS 基础", "lucide:globe", 3, "oklch(0.6 0.2 160)"),
+  tech("OGC 标准协议", "lucide:file-cog", 4),
+  tech("空间分析", "lucide:scan", 3),
+  tech("OpenLayers", "simple-icons:openlayers", 4, "oklch(0.6 0.2 200)"),
+  tech("Cesium", "simple-icons:cesium", 3, "oklch(0.7 0.15 60)"),
+  tech("Turf.js", "lucide:scan", 3),
+  tech("GeoScene Maps SDK", "simple-icons:esri", 3),
+  tech("SuperMap iClient", "lucide:map-pinned", 3),
+  tech("3D Tiles", "lucide:box", 2),
+  tech("GeoJSON / GML / WKT", "lucide:file-cog", 3),
+  tech("坐标系与投影转换", "lucide:globe", 3),
+  tech("QGIS / ArcGIS Pro", "lucide:map-pinned", 4),
+  tech("GeoServer", "lucide:server", 3),
+  tech("GeoScene Enterprise / Pro", "lucide:server", 3),
+  tech("SuperMap iServer", "lucide:server", 3),
+  tech("PostGIS 空间 SQL", "simple-icons:postgresql", 3),
+  tech("遥感基础", "lucide:satellite", 1),
+];
+
+export const engineeringTech: TechItem[] = [
+  tech("Vite", "simple-icons:vite", 4),
+  tech("Webpack", "simple-icons:webpack", 4),
+  tech("Git", "simple-icons:git", 4),
+  tech("ESLint", "lucide:file-cog", 4),
+  tech("Prettier", "lucide:code-2", 4),
+  tech("Figma 设计稿还原", "lucide:layout", 4),
+  tech("前后端接口联调", "lucide:code-2", 4),
+  tech("Codex", "lucide:bot", 4),
+  tech("Claude Code", "lucide:bot", 4),
+  tech("MCP / Skill", "lucide:bot", 3),
 ];
 
 export const others: TechItem[] = [
-  {
-    name: "服务器部署",
-    icon: "lucide:cloud",
-    color: "oklch(0.6 0.2 220)",
-    level: 3,
-  },
-  {
-    name: "cc/cursor/trae",
-    icon: "lucide:bot",
-    color: "oklch(0.7 0.2 30)",
-    level: 3,
-  },
-  {
-    name: "node.js/py",
-    icon: "simple-icons:nodedotjs",
-    color: "oklch(0.7 0.2 140)",
-    level: 2,
-  },
-  {
-    name: "Docker",
-    icon: "simple-icons:docker",
-    color: "oklch(0.6 0.2 220)",
-    level: 2,
-  },
-  {
-    name: "Nginx",
-    icon: "simple-icons:nginx",
-    color: "oklch(0.6 0.2 180)",
-    level: 2,
-  },
-  {
-    name: "Git",
-    icon: "simple-icons:git",
-    color: "oklch(0.7 0.2 30)",
-    level: 2,
-  },
+  tech("Node.js", "simple-icons:nodedotjs", 2, "oklch(0.7 0.2 140)"),
+  tech("Python / ArcPy", "lucide:code-2", 2),
+  tech("PostgreSQL", "simple-icons:postgresql", 4),
+  tech("MySQL", "lucide:server", 4),
+  tech("Linux", "lucide:server", 2),
+  tech("Docker", "simple-icons:docker", 2),
+  tech("Nginx", "simple-icons:nginx", 2),
+  tech("服务器部署", "lucide:cloud", 3),
 ];

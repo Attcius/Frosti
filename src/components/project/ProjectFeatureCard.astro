@@ -47,10 +47,18 @@ const { project } = Astro.props;
 
       <!-- 操作按钮 -->
       <div class="flex flex-wrap gap-3 mt-auto">
-        <a href={project.github} target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary gap-2">
-          <Icon name="lucide:github" class="w-4 h-4" />
-          <span>Source Code</span>
-        </a>
+        {project.github && (
+          <a href={project.github} target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary gap-2">
+            <Icon name="lucide:github" class="w-4 h-4" />
+            <span>GitHub</span>
+          </a>
+        )}
+        {project.gitee && (
+          <a href={project.gitee} target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline gap-2">
+            <Icon name="simple-icons:gitee" class="w-4 h-4" />
+            <span>Gitee</span>
+          </a>
+        )}
         {project.demo && (
           <a href={project.demo} target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline gap-2">
             <Icon name="lucide:external-link" class="w-4 h-4" />

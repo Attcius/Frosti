@@ -63,25 +63,33 @@ site:
 
 # 用户的个人信息
 user:
-  name: EveSunMaple # 用户名
+  name: Atticus # 用户名
   site: "https://atticus0723.top" # 用户的网站链接
   avatar: /profile.png # 用户头像路径
   sidebar: # 侧边栏配置
     social:
-      - href: "https://github.com/ZoeyLee0723"
-        ariaLabel: Github
-        title: Github
+      - href: "https://github.com/Attcius"
+        ariaLabel: GitHub
+        title: GitHub
         svg: "ri:github-line"
+      - href: "https://gitee.com/zoey0723"
+        ariaLabel: Gitee
+        title: Gitee
+        svg: "simple-icons:gitee"
       - href: "https://space.bilibili.com/125111176?spm_id_from=333.1007.0.0"
         ariaLabel: BiliBili
         title: BiliBili
         svg: "ri:bilibili-line"
   footer:
     social:
-      - href: "https://github.com/ZoeyLee0723"
-        ariaLabel: Github
-        title: Github
+      - href: "https://github.com/Attcius"
+        ariaLabel: GitHub
+        title: GitHub
         svg: "ri:github-line"
+      - href: "https://gitee.com/zoey0723"
+        ariaLabel: Gitee
+        title: Gitee
+        svg: "simple-icons:gitee"
       - href: "https://space.bilibili.com/125111176?spm_id_from=333.1007.0.0"
         ariaLabel: BiliBili
         title: BiliBili

@@ -12,7 +12,7 @@ const levelMap: Record<number, string> = {
   2: "了解",
   3: "熟悉",
   4: "熟练",
-  5: "资深"
+  5: "资深",
 };
 ---
 
@@ -27,12 +27,12 @@ const levelMap: Record<number, string> = {
   </div>
   
   <!-- 技术名称 -->
-  <div class="w-36 flex-shrink-0 text-sm font-medium truncate" title={name}>
+  <div class="w-36 min-w-0 flex-shrink-0 text-sm font-medium break-words" title={name}>
     {name}
   </div>
 
   <!-- 进度条 -->
-  <div class="flex-1 bg-base-300 rounded-full h-2.5 overflow-hidden">
+  <div class="flex-1 min-w-8 bg-base-300 rounded-full h-2.5 overflow-hidden">
     <div 
       class="bg-primary h-2.5 rounded-full transition-all duration-500" 
       style={`width: ${(level / 5) * 100}%`}

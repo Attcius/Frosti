@@ -23,11 +23,19 @@ const { project } = Astro.props;
     ))}
   </div>
 
-  <div class="flex gap-3 mt-auto pt-2 border-t border-base-300">
-    <a href={project.github} target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-ghost gap-1 text-base-content/60 hover:text-primary">
-      <Icon name="lucide:github" class="w-3.5 h-3.5" />
-      GitHub
-    </a>
+  <div class="flex flex-wrap gap-3 mt-auto pt-2 border-t border-base-300">
+    {project.github && (
+      <a href={project.github} target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-ghost gap-1 text-base-content/60 hover:text-primary">
+        <Icon name="lucide:github" class="w-3.5 h-3.5" />
+        GitHub
+      </a>
+    )}
+    {project.gitee && (
+      <a href={project.gitee} target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-ghost gap-1 text-base-content/60 hover:text-primary">
+        <Icon name="simple-icons:gitee" class="w-3.5 h-3.5" />
+        Gitee
+      </a>
+    )}
     {project.demo && (
       <a href={project.demo} target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-ghost gap-1 text-base-content/60 hover:text-primary">
         <Icon name="lucide:external-link" class="w-3.5 h-3.5" />
